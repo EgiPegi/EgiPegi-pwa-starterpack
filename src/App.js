@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from "react";
+import "./assets/styles/App.scss";
+import "./assets/styles/_root.scss";
+import "./assets/styles/icon.scss";
+import "./assets/styles/layout.scss";
+import "./assets/styles/header.scss";
+import "./assets/styles/navbar.scss";
+import "./assets/styles/dropdown.scss";
+import "./assets/styles/table.scss";
+import "./assets/Icons/css/uicons-bold-straight.css"
+import "bootstrap/dist/css/bootstrap.min.css";
+import LoadingSus from "./components/LoadingSus";
+import Routes from "./configs/Routes";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<LoadingSus />}>
+      <Routes />
+    </Suspense>
   );
 }
 

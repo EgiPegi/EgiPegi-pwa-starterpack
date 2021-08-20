@@ -1,0 +1,85 @@
+@import 'root';
+
+.table_component {
+  // z-index: -1;
+  width: 100%;
+  position: relative;
+  .loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #353b486e;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pagination {
+    display: inline-block;
+    margin-top: 10px;
+    float: right;
+    background-color: var(--prim-color);
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    select {
+      background-color: var(--nav-color);
+      color: white;
+      font-weight: 600;
+      border: 0;
+      outline: none;
+      border-radius: 4px;
+      padding: 5px 0 5px 10px;
+    }
+  }
+
+  .pagination li {
+    font-size: 14px;
+    cursor: pointer;
+    color: rgb(189, 189, 189);
+    float: left;
+    padding: 4px 8px;
+    margin: 0.5px;
+    text-decoration: none;
+    list-style-type: none;
+  }
+
+  .pagination li.active {
+    background-color: var(--nav-color);
+    color: white;
+    border-radius: 5px;
+  }
+
+  .pagination li:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+  }
+}
+
+#custum_table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+#custum_table td,
+#custum_table th {
+  padding: 12px;
+}
+
+#custum_table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#custum_table tr:hover {
+  background-color: #ddd;
+}
+
+#custum_table th {
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--prim-color);
+  color: white;
+}

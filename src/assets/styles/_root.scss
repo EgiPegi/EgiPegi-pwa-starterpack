@@ -1,0 +1,117 @@
+:root {
+  --background-color: #fff;
+  --text-color: #2f3640;
+  --text-color-w: #fff;
+  --light-color: #353b48;
+  --prim-color: rgb(60, 53, 122);
+  --prim-color-dead: rgb(187, 185, 204);
+  --prim-color-tr: #2f3640b0;
+  --nav-color: rgb(127, 121, 177);
+  --nav-width: 250px;
+  --header-h: 75px;
+  --ml-n: 20px;
+  --icon-size: 10px;
+}
+
+hr {
+  border: 0.15px solid var(--prim-color);
+  margin: 5px;
+  z-index: -1;
+}
+
+.loader {
+  margin: 20% auto;
+  border: 10px solid var(--prim-color);
+  border-radius: 50%;
+  border-top: 70px solid #bbbbbb;
+  border-right: 70px solid mediumseagreen;
+  border-bottom: 10px solid tomato;
+  height: 150px;
+  width: 150px;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+.loader-md {
+  margin: 5px auto;
+  border: 5px solid var(--prim-color);
+  border-radius: 50%;
+  border-top: 22px solid #bbbbbb;
+  border-right: 22px solid mediumseagreen;
+  border-bottom: 5px solid tomato;
+  height: 50px;
+  width: 50px;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+.btn-disabled {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  cursor: wait;
+  background-color: var(--prim-color-dead);
+  .loader {
+    margin: 0 5px 0 0;
+    border: 1px solid var(--prim-color);
+    border-radius: 50%;
+    border-top: 5px solid #bbbbbb;
+    border-right: 5px solid mediumseagreen;
+    border-bottom: 1px solid tomato;
+    height: 25px;
+    width: 25px;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+  }
+} 
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+//scrollbar
+/* width */
+::-webkit-scrollbar {
+  border-radius: 2px;
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  // background: var(--prim-color);
+  background-color: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  // background-color: #fff;
+  background: rgba(112, 60, 179, 0.24);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(116, 60, 179);
+}
+
+::-webkit-scrollbar:hover {
+  border-radius: 2px;
+  height: 10px;
+}

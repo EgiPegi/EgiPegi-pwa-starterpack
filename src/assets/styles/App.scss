@@ -1,0 +1,37 @@
+@import 'root';
+.breadcrumb {
+  width: 99.9%;
+  margin-bottom: 40px;
+  box-shadow: 1px 9px 6px -6px rgba(0, 0, 0, 0.267);
+  -webkit-box-shadow: 1px 9px 6px -6px rgba(0, 0, 0, 0.185);
+  -moz-box-shadow: 1px 9px 6px -6px rgba(0, 0, 0, 0.103);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(128, 128, 128, 0.315);
+  .title {
+    padding: 10px;
+    font-size: 26px;
+  }
+  .bread-nav {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 0px;
+    font-size: 16px;
+  }
+}
+.card {
+  box-shadow: 1px 9px 6px -6px rgba(0, 0, 0, 0.267);
+  -webkit-box-shadow: 1px 9px 6px -6px rgba(0, 0, 0, 0.185);
+  -moz-box-shadow: 1px 9px 6px -6px rgba(0, 0, 0, 0.103);
+  position: relative;
+  .loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #353b486e;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

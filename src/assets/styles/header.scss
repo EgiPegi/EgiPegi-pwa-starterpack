@@ -1,0 +1,23 @@
+@import 'root';
+
+
+.main-header {
+    width: auto;
+    left: var(--nav-width);
+    right: 5px;
+    top: 0;
+    height: var(--header-h);
+    transition: width 0.25s;
+    background-color: var(--prim-color);
+    border-radius: 4px;
+    display: flex;
+    padding-right: var(--nav-width);
+    z-index: 99 !important;
+    
+}
+.right-header {
+    position: fixed;
+    top: 15px;
+    right: 10px;
+    display: flex;
+}

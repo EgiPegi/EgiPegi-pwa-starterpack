@@ -1,0 +1,1 @@
+export const HIDE_NAVBAR = "HIDE_NAVBAR";
