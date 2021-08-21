@@ -7,7 +7,7 @@ const reducer = (state = initialState, action) => {
 
   switch (type) {
     case SET_MESSAGE:
-      return { message: payload };
+      return payload;
 
     case CLEAR_MESSAGE:
       return { message: "" };
@@ -15,6 +15,6 @@ const reducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default reducer;

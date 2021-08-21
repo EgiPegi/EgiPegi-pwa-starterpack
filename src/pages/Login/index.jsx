@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { login } from "../../configs/Redux/Auth/action";
+import { clearMessage } from "../../configs/Redux/Message/action";
 
 const Login = () => {
   const initialAuthState = {
@@ -16,11 +17,12 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const message = useSelector((state) => state.message.message);
+  const status = useSelector((state) => state.message.status);
   const isLogin = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // console.log(isLogin);
+    // console.log(status);
     if (isLogin) {
       history.push("/");
     }
@@ -53,17 +55,23 @@ const Login = () => {
       {/* TITLE  */}
       {/* FORM  */}
 
-      
       <div className="card w-50 position-relative">
-      {message ? (
-        <div className="alert alert-danger position-absolute bottom-100 w-100" role="alert">
-          {message}
-        </div>
-      ) : (
-        <div></div>
-      )}
+        {message ? (
+          <div
+            className={
+              status === "error"
+                ? "alert alert-danger position-absolute bottom-100 w-100"
+                : "alert alert-success position-absolute bottom-100 w-100"
+            }
+            role="alert"
+          >
+            {message}
+          </div>
+        ) : (
+          <div></div>
+        )}
         <div className="card-header">Sign In to Access This WebApp!</div>
-        
+
         <form
           onSubmit={handleLogin}
           // ref={(c) => {
@@ -75,7 +83,7 @@ const Login = () => {
           <div className="form-body mt-2 mb-2">
             <div className="mb-3">
               <input
-                class="form-control"
+                className="form-control"
                 type="text"
                 placeholder="Username*"
                 name="username"
@@ -86,7 +94,7 @@ const Login = () => {
             </div>
             <div className="mb-3">
               <input
-                class="form-control"
+                className="form-control"
                 type="password"
                 placeholder="Password*"
                 name="password"
@@ -107,7 +115,12 @@ const Login = () => {
             <button className="btn btn-primary w-100">LOGIN</button>
           )}
           <div className="form-footer" style={{ justifyContent: "flex-end" }}>
-            <span onClick={() => history.push("/create-account")}>
+            <span
+              onClick={() => {
+                dispatch(clearMessage());
+                history.push("/create-account");
+              }}
+            >
               or create account here
             </span>
           </div>

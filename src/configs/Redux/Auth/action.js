@@ -4,12 +4,10 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
-  REFRESH_TOKEN
+  REFRESH_TOKEN,
 } from "./types";
 
-import {
-  SET_MESSAGE,
-} from "../Message/types"
+import { SET_MESSAGE } from "../Message/types";
 
 import AuthService from "../../Services/Auth";
 
@@ -22,7 +20,7 @@ export const register = (username, email, password) => (dispatch) => {
 
       dispatch({
         type: SET_MESSAGE,
-        payload: response.data.message,
+        payload: { message: response.data.message, status: "ok" },
       });
 
       return Promise.resolve();
@@ -41,7 +39,7 @@ export const register = (username, email, password) => (dispatch) => {
 
       dispatch({
         type: SET_MESSAGE,
-        payload: message,
+        payload: { message, status: "error" },
       });
 
       return Promise.reject();
@@ -66,6 +64,7 @@ export const login = (username, password) => (dispatch) => {
           error.response.data.message) ||
         error.message ||
         error.toString();
+      const err = { message, status: "error" };
 
       dispatch({
         type: LOGIN_FAIL,
@@ -73,7 +72,7 @@ export const login = (username, password) => (dispatch) => {
 
       dispatch({
         type: SET_MESSAGE,
-        payload: message,
+        payload: err,
       });
 
       return Promise.reject();
@@ -93,5 +92,5 @@ export const refreshToken = (accessToken) => (dispatch) => {
   dispatch({
     type: REFRESH_TOKEN,
     payload: accessToken,
-  })
-}
+  });
+};
