@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
+//redux
+import { useDispatch } from "react-redux";
+//import action redux
 import {
   createContoh,
   updateContoh,
 } from "../../../configs/Redux/Contoh/action";
-
+//import services
 import ContohDataService from "../../../configs/Services/Contoh";
+//untuk compress foto dan mereturn ke base64 agar data bisa di simpan di database.
 import compressImgB64 from "../../../core/Logic/compressImgB64";
 
 const DoCRUD = () => {
   const history = useHistory();
   const { id } = useParams();
-
+  //state awal
   const initialContohState = {
     _id: null,
     judul: "",

@@ -15,7 +15,7 @@
   }
   .lay-main {
     position: relative;
-    padding-top: var(--header-h);
+    padding-top: calc(var(--header-h) - 4px);
     color: var(--text-color);
     flex: 1;
     transition: margin-left 0.25s;

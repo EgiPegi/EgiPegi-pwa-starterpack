@@ -4,6 +4,8 @@ This project was bootstrapped 5 with [Create React App](https://github.com/faceb
 
 This project demo [Visit Demo](https://egipegi-react-redux-pwa.netlify.app).
 
+For server-side, you can use this project [BE Starterpack NodeJs MongoDB](https://github.com/EgiPegi/be-starterpack-node)
+
 ## Available Scripts
 
 In the project directory, you can run:
