@@ -3,6 +3,7 @@
 //navigation
 .navbar {
   width: 100%;
+  z-index: 99;
   .nav-head {
     background-color: var(--prim-color);
     height: var(--header-h);

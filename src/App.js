@@ -6,6 +6,7 @@ import "./assets/styles/layout.scss";
 import "./assets/styles/header.scss";
 import "./assets/styles/navbar.scss";
 import "./assets/styles/dropdown.scss";
+import "./assets/styles/modal.scss";
 import "./assets/styles/table.scss";
 import "./assets/Icons/css/uicons-bold-straight.css"
 import "bootstrap/dist/css/bootstrap.min.css";

@@ -119,15 +119,15 @@ const ListCRUD = () => {
     <div className="d-flex">
       <div style={{ flex: 1 }} className="position-relative mt-3">
         <div className="position-absolute end-0 bottom-100">
-          <div class="form-floating w-100 ">
+          <div className="form-floating w-100 ">
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="cari"
               placeholder="pencarian"
               onChange={(e) => findByTitle(e)}
             />
-            <label for="cari">Cari by Judul</label>
+            <label htmlFor="cari">Cari by Judul</label>
           </div>
         </div>
         <DataTable

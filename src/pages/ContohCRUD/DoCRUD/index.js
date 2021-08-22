@@ -9,7 +9,7 @@ import {
 } from "../../../configs/Redux/Contoh/action";
 //import services
 import ContohDataService from "../../../configs/Services/Contoh";
-//untuk compress foto dan mereturn ke base64 agar data bisa di simpan di database.
+//untuk compress foto sehingga ukuran foto menjadi lebih kecil dan mereturn ke base64 agar data bisa di simpan di database.
 import compressImgB64 from "../../../core/Logic/compressImgB64";
 
 const DoCRUD = () => {
@@ -121,13 +121,13 @@ const DoCRUD = () => {
         <div className="card-body">
           {/* BODY FORM  */}
           <div className="form-body">
-            <div class="mb-3">
-              <label for="judul" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="judul" className="form-label">
                 Judul
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 name="judul"
                 id="judul"
                 placeholder="Judul *"
