@@ -14,7 +14,7 @@ const ListCRUD = () => {
   const [currentContoh, setCurrentContoh] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const contoh = useSelector((state) => state.contoh);
+  var contoh = useSelector((state) => state.contoh);
   const dispatch = useDispatch();
 
   for (const key in contoh) {
@@ -26,6 +26,7 @@ const ListCRUD = () => {
     setIsLoading(true);
     dispatch(retrieveContoh())
       .then((res) => {
+        // contoh = res;
         setIsLoading(false);
       })
       .catch((err) => setIsLoading(false));

@@ -21,10 +21,10 @@ const rootPersistConfig = {
 const rootReducer = combineReducers({
   counter: counterReducer,
   counterPersist: counterPersistReducer, //persisted 
-  auth: authReducer,
+  auth: authReducer, //persisted
   message: messageReducer,
-  contoh: contohReducer,
-  navbar: navbarReducer,
+  contoh: contohReducer, //persisted
+  navbar: navbarReducer, //persisted
 });
 
 export default persistReducer(rootPersistConfig, rootReducer);
