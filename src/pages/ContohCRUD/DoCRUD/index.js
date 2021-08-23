@@ -80,15 +80,8 @@ const DoCRUD = () => {
 
     dispatch(createContoh(judul, img))
       .then((data) => {
-        setCurrentContoh({
-          _id: data.id,
-          judul: data.judul,
-          img: data.img,
-        });
-        console.log(data);
         setMessage("The Contoh was create successfully!");
         history.push("/contoh-crud");
-        setIsLoading(false);
       })
       .catch((e) => {
         setIsLoading(false);

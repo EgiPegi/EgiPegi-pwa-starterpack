@@ -9,28 +9,34 @@ import {
   retrieveContoh,
 } from "../../../configs/Redux/Contoh/action";
 
+let contoh = [];
 const ListCRUD = () => {
   const history = useHistory();
+  const local = JSON.parse(localStorage.getItem("new-contoh"));
   const [currentContoh, setCurrentContoh] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  var contoh = useSelector((state) => state.contoh);
+  var contohState = useSelector((state) => state.contoh);
   const dispatch = useDispatch();
+
+  if (local) {
+    contoh = local.concat(contohState);
+  } else {
+    contoh = contohState;
+  }
+  useEffect(() => {
+    setIsLoading(true);
+    dispatch(retrieveContoh())
+      .then((res) => {
+        setIsLoading(false);
+      })
+      .catch((err) => setIsLoading(false));
+  }, [dispatch]);
 
   for (const key in contoh) {
     let no = parseInt(key) + 1;
     contoh[key]["no"] = no;
   }
-
-  useEffect(() => {
-    setIsLoading(true);
-    dispatch(retrieveContoh())
-      .then((res) => {
-        // contoh = res;
-        setIsLoading(false);
-      })
-      .catch((err) => setIsLoading(false));
-  }, [dispatch]);
 
   const refreshData = () => {
     setCurrentContoh(null);
