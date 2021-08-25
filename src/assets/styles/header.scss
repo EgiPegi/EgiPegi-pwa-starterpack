@@ -1,23 +1,43 @@
-@import 'root';
-
+@import "root";
 
 .main-header {
-    width: auto;
-    left: var(--nav-width);
-    right: 5px;
-    top: 0;
-    height: var(--header-h);
-    transition: width 0.25s;
-    background-color: var(--prim-color);
-    border-radius: 4px;
-    display: flex;
-    padding-right: var(--nav-width);
-    z-index: 99 !important;
-    
+  width: auto;
+  left: var(--nav-width);
+  right: 5px;
+  top: 0;
+  height: var(--header-h);
+  transition: width 0.25s;
+  background-color: var(--prim-color);
+  border-radius: 4px;
+  display: flex;
+  padding-right: var(--nav-width);
+  z-index: 99 !important;
 }
 .right-header {
+  position: fixed;
+  top: 15px;
+  right: 10px;
+  display: flex;
+}
+
+.dropdown-tgl {
+  visibility: var(--mobile-hide);
+}
+
+@media only screen and (max-width: 600px) {
+  .dropdown-tgl {
     position: fixed;
-    top: 15px;
+    visibility: var(--mobile-visible);
+    right: 0;
+    margin: 10px;
+    padding: 10px;
+  }
+  .right-header {
+    position: fixed;
+    visibility: var(--mobile-hide);
+    top: var(--header-h);
     right: 10px;
     display: flex;
+    flex-direction: column;
+  }
 }

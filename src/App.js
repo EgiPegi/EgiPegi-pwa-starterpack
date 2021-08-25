@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+import "./assets/styles/index.css";
 import "./assets/styles/App.scss";
 import "./assets/styles/_root.scss";
 import "./assets/styles/icon.scss";
