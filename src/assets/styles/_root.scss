@@ -11,6 +11,8 @@
   --header-h: 75px;
   --ml-n: 20px;
   --icon-size: 10px;
+  --mobile-hide: hidden;
+  --mobile-visible: visible;
 }
 
 hr {
@@ -65,7 +67,7 @@ hr {
     -webkit-animation: spin 1.5s linear infinite;
     animation: spin 1.5s linear infinite;
   }
-} 
+}
 
 @-webkit-keyframes spin {
   0% {
