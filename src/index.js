@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 
 import { store, persistor } from "./configs/Redux/store";
+import setup from "./configs/Services/Auth/setupInterceptors";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -18,6 +19,9 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+
+//interceptor
+setup(store);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
